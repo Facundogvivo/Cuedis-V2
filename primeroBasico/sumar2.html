@@ -9,6 +9,7 @@
       <meta content="all" name="robots">
       <link rel="shortcut icon" href="../assets/img/ico/cuedis.ico">
       <link rel="stylesheet" href="../assets/ccs/style-general.css" type="text/css" media="all">
+      <script src="../assets/js/app.js"></script>
       <style>
          div div #tema01 {
             background-image:  url(../assets/img/img/tema-activo.gif);
@@ -16,12 +17,139 @@
          #tema01 a {
             font-weight: bold;
          }
-         .subapartado-j {
+         .subapartado-h {
             font-weight: bold;
+    color: #ff8800;
          }
-      </style>
+.switch {
+    position: relative;
+    width: 100%;
+    padding: 0 1rem;
+    font-family: verdana;
+    text-align: center;
+  }
+  .switch:before {
+    content: "  ";
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+  }
+  .switch__label {
+    display: inline-block;
+    width: 4rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: color 200ms ease-out;
+  }
+  .switch__label:hover {
+    color: #000;
+  }
+  .switch__indicator {
+    width: 6rem;
+    height: 4rem;
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    border-radius: 50%;
+    transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
+    transform: translate3d(1rem, 0, 0);
+  }
+  .switch input#one:checked ~ .switch__indicator {
+    background: PaleGreen;
+    transform: translate3d(7.5rem, 0, 0);
+  }
+  .switch input#two:checked ~ .switch__indicator {
+    background: MediumTurquoise;
+    transform: translate3d(13.5rem, 0, 0);
+  }
+  .switch input#three:checked ~ .switch__indicator {
+    background: violet;
+    transform: translate3d(19.5rem, 0, 0);
+  }
+  .switch input#four:checked ~ .switch__indicator {
+    background: pink;
+    transform: translate3d(25.5rem, 0, 0);
+  }
+  .switch input[type=radio]:not(:checked), .switch input[type=radio]:checked {
+    display: none;
+  }
+         </style>
+      <script>
+         function Nuevo() { 
+                document.getElementById("numero11").value = aleatorio(1,9);
+                document.getElementById("numero12").value = aleatorio(1,10-document.getElementById("numero11").value);
+                document.getElementById("resultado1").value = "";
+            }
+            var contador=0;
+            var correctos = 0;
+            var incorrectos = 0;
+         function Sumar() {
+                var numero1;
+                var numero2;
+                var suma;
+                var resultado;
+                numero1 =   parseInt(document.getElementById("numero11").value);
+                numero2 =   parseInt(document.getElementById("numero12").value);
+                suma =   parseInt(document.getElementById("resultado1").value);
+                if(numero1 + numero2 == suma) {
+                    resultado = "Correcto";
+                    var tr, td, tabla;
+                    tabla = document.getElementById('dataTable');
+                    tr = tabla.insertRow(tabla.rows.length);
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = numero1 ;
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML =  numero2 ;
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = suma ;  
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = resultado ; 
+                    correcto(); 
+                    correctos = correctos + 1;
+                    document.getElementById('ejCorrecto').innerHTML = correctos; 
+                    incorrectos = incorrectos;
+                    document.getElementById('ejIncorrecto').innerHTML = incorrectos; 
+                } else {
+                resultado = "Incorrecto";
+                var tr, td, tabla;
+                    var tr, td, tabla;
+                    tabla = document.getElementById('dataTable');
+                    tr = tabla.insertRow(tabla.rows.length);
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = numero1 ;
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML =  numero2 ;
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = suma ;  
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = resultado ;
+                    incorrecto();  
+                    incorrectos = incorrectos + 1;
+                    document.getElementById('ejIncorrecto').innerHTML = incorrectos;
+                    correctos = correctos
+                    document.getElementById('ejCorrecto').innerHTML = correctos;
+                };      
+                contador++;
+                Nuevo();
+                document.getElementById("ejtotales").innerHTML = contador;
+                
+                var rendimiento = (parseInt(document.getElementById("ejCorrecto").innerHTML)/parseInt(document.getElementById("ejtotales").innerHTML))*100;
+                document.getElementById("ejRendimiento").innerHTML =  rendimiento.toFixed() + " %";
+            }
+      </script>
    </head>
    <body>
+      <div clas="estadoCorrecto" id="estadoCorrecto">
+         <img src="../assets/img/img/felicitaciones.gif" width="100%" style="border-radius: 10px;">
+     </div>
+     <div clas="estadoIncorrecto" id="estadoIncorrecto">
+         <img src="../assets/img/img/Intentalo.gif" width="100%" style="border-radius: 10px;">
+     </div>
+
       <div id="contenido">
          <div id="contenido-curva-superior"></div>
          <div id="banners">
@@ -58,14 +186,12 @@
                   <div><a class="subapartado-e" href="restar1.html" title="Clic!">Restar (1)</a></div>
                   <div><a class="subapartado-f" href="figuras2D3D.html" title="Clic!">Figuras 2D y 3D</a></div>
                   <div><a class="subapartado-g" href="numerosMayoresA10.html" title="Clic!">Números mayores a 10</a></div>
-                  <div><a class="subapartado-h" href="tiempo.html" title="Clic!">Tiempo</a></div>
-                  <div><a class="subapartado-i" href="datosPictogramas.html" title="Clic!">Datos y pictogramas</a></div>
-                  <div><a class="subapartado-j" href="sumar2.html" title="Clic!">Sumar (2)</a></div>
-                  <div><a class="subapartado-k" href="restar2.html" title="Clic!">Restar (2)</a></div>
-                  <div><a class="subapartado-l" href="patrones.html" title="Clic!">Patrones</a></div>
-                  <div><a class="subapartado-m" href="contarHasta100.html" title="Clic!">Contar hasta 100</a></div>
-                  <div><a class="subapartado-n" href="longitud.html" title="Clic!">Longitud</a></div>
-                  <div><a class="subapartado-ñ" href="figuras2d2.html" title="Clic!">Figuras 2D (2)</a></div>
+                  <div><a class="subapartado-h" href="sumar2.html" title="Clic!">Sumar (2)</a></div>
+                  <div><a class="subapartado-i" href="restar2.html" title="Clic!">Restar (2)</a></div>
+                  <div><a class="subapartado-j" href="patrones.html" title="Clic!">Patrones</a></div>
+                  <div><a class="subapartado-k" href="contarHasta100.html" title="Clic!">Contar hasta 100</a></div>
+                  <div><a class="subapartado-l" href="longitud.html" title="Clic!">Longitud</a></div>
+                  <div><a class="subapartado-m" href="figuras2d2.html" title="Clic!">Figuras 2D (2)</a></div>
                </div>
                <div class="caja-google">
                   <!--  espacio listo para futura publicidad de Google -->
@@ -76,8 +202,237 @@
                <div id="cuerpo-central-curva-sup"></div>
                <div id="contenidos">
                   <div class="paso"></div>
-                  <h1>:: SUMAR (2) ::</h1>
-                  <p></p>
+                  <h1>:: SUMA (1) ::</h1>   
+                  <div style="text-align: center;">
+                     <div class="switch">
+                        <input name="switch" id="one" type="radio">
+                        <label for="one" class="switch__label" onclick="mostrar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); ocultar('opcion4');">opción 1</label>
+                        <input name="switch" id="two" type="radio" />
+                        <label for="two" class="switch__label" onclick="ocultar('opcion1'); mostrar('opcion2'); ocultar('opcion3'); ocultar('opcion4');">opción 2</label>
+                        <input name="switch" id="three" type="radio" />
+                        <label for="three" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); mostrar('opcion3'); ocultar('opcion4');">opción 3</label>
+                        <input name="switch" id="four" type="radio" />
+                        <label for="four" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); mostrar('opcion4');">opción 3</label>
+                        <div class="switch__indicator" /></div>
+                      </div>
+                  </div> 
+                  <div  id="opcion1" style="display: none;">
+                        <h3>1Realice la operación suma siguiente.</h3>
+                        
+                        <table border="0" style="margin: auto;text-align:center;">
+                           <tr>
+                               <td colspan="2" style="padding: 10px;">  
+                                   <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                               </td>
+                           </tr>
+                           <tr>
+                              <td></td>
+                              <td>
+                                 <input type="text"  maxlength="1" class="casilla" id="numero11" readonly>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input type="text" id="operacion" class="casilla" value="+" readonly>
+                              </td>
+                              <td>
+                                 <input type="text"  maxlength="1" class="casilla" id="numero12" readonly>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="2">
+                                 <hr color="black">
+                              </td>
+                           </tr>
+                           <tr>
+                              <td></td>
+                              <td>
+                                 <input type="text"  maxlength="2" class="aleatorio" id="resultado1">
+                              </td>
+                           </tr>
+                           <tr>
+                               <td colspan="2" style="padding: 10px;">
+                                   <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                               </td>
+                           </tr>
+                       </table>
+                    </div>
+                    <div  id="opcion2" style="display: none;">
+                          <h3>2Realice la operación suma siguiente.</h3>
+                          
+                          <table border="0" style="margin: auto;text-align:center;">
+                             <tr>
+                                 <td colspan="2" style="padding: 10px;">  
+                                     <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                                 </td>
+                             </tr>
+                             <tr>
+                                <td></td>
+                                <td>
+                                   <input type="text"  maxlength="1" class="casilla" id="numero11" readonly>
+                                </td>
+                             </tr>
+                             <tr>
+                                <td>
+                                   <input type="text" id="operacion" class="casilla" value="+" readonly>
+                                </td>
+                                <td>
+                                   <input type="text"  maxlength="1" class="casilla" id="numero12" readonly>
+                                </td>
+                             </tr>
+                             <tr>
+                                <td colspan="2">
+                                   <hr color="black">
+                                </td>
+                             </tr>
+                             <tr>
+                                <td></td>
+                                <td>
+                                   <input type="text"  maxlength="2" class="aleatorio" id="resultado1">
+                                </td>
+                             </tr>
+                             <tr>
+                                 <td colspan="2" style="padding: 10px;">
+                                     <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                                 </td>
+                             </tr>
+                         </table>
+                      </div>
+                      <div  id="opcion3" style="display: none;">
+                            <h3>3Realice la operación suma siguiente.</h3>
+                            
+                            <table border="0" style="margin: auto;text-align:center;">
+                               <tr>
+                                   <td colspan="2" style="padding: 10px;">  
+                                       <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                                   </td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td>
+                                     <input type="text"  maxlength="1" class="casilla" id="numero11" readonly>
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td>
+                                     <input type="text" id="operacion" class="casilla" value="+" readonly>
+                                  </td>
+                                  <td>
+                                     <input type="text"  maxlength="1" class="casilla" id="numero12" readonly>
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td colspan="2">
+                                     <hr color="black">
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td>
+                                     <input type="text"  maxlength="2" class="aleatorio" id="resultado1">
+                                  </td>
+                               </tr>
+                               <tr>
+                                   <td colspan="2" style="padding: 10px;">
+                                       <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                                   </td>
+                               </tr>
+                           </table>
+                        </div>
+                        <div  id="opcion4" style="display: none;">
+                              <h3>4Realice la operación suma siguiente.</h3>
+                              
+                              <table border="0" style="margin: auto;text-align:center;">
+                                 <tr>
+                                     <td colspan="2" style="padding: 10px;">  
+                                         <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                    <td></td>
+                                    <td>
+                                       <input type="text"  maxlength="1" class="casilla" id="numero11" readonly>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <input type="text" id="operacion" class="casilla" value="+" readonly>
+                                    </td>
+                                    <td>
+                                       <input type="text"  maxlength="1" class="casilla" id="numero12" readonly>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan="2">
+                                       <hr color="black">
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td></td>
+                                    <td>
+                                       <input type="text"  maxlength="2" class="aleatorio" id="resultado1">
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                     <td colspan="2" style="padding: 10px;">
+                                         <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                                     </td>
+                                 </tr>
+                             </table>
+                          </div>
+                 <div>
+                  <div>
+                    <h2 class="all-tittles">Rendimiento</h2>
+                  </div>
+                     <div>
+                        <div>
+                           <h3>En este cuadro se puede ver el rendimiento obtenido.</h3>
+                           <div>
+                                 
+                                 <table style="border: 2px solid black; width: 100%; height: 100%; margin: auto;" frame="border" rules="groups" id="dataTable1">
+                                    <tr >
+                                       <td align="right" style="width: 10%;"><b>Correctos:</b></td>
+                                       <td align="center" id="ejCorrecto" style="width: 80%;"></td>
+                                       <td style="text-align:center; border: 2px solid black; border-bottom: none; background-color: #F3F781; width: 10%;"><b>Rendimiento</b></td>
+                                    </tr>
+                                    <tr>
+                                       <td align="right"><b>Incorrectos:</b></td>
+                                       <td align="center" id="ejIncorrecto"></td>
+                                       <td rowspan="2" style="text-align:center; border: 2px solid black; border-top: none; background-color: #F3F781;" id="ejRendimiento"></td>
+                                    </tr>
+                                    <tr>
+                                       <td align="right"><b>Total:</b></td>
+                                       <td align="center" id="ejtotales"></td>
+                                    </tr>
+                                 </table>
+                           </div>
+                        </div>
+                     </div>
+               </div>
+               <div id="excel" style="display: none" >
+                  <div>
+                  <h2>Resultado</h2>
+                  </div>
+                     <div>
+                        <h3>En este cuadro se puede ver los ejercicios realizados.</h3>
+                        <div>
+                              <table  border="0" style="width: 100%; text-align:center; margin: auto;overflow: auto;" id="dataTable">
+                                 <tr>
+                                    <td colspan="4"><hr></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Número</td>
+                                    <td>Cantidad</td>
+                                    <td>Suma</td>
+                                    <td>Resultado</td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan="4"><hr></td>
+                                 </tr>
+                              </table>
+                        </div>
+                     </div>
+                  </div>
                   <div class="paso"></div>
                </div>
                <div id="cuerpo-central-curva-inf"></div>
