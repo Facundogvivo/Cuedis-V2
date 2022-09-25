@@ -39,7 +39,7 @@
   }
   .switch__label {
     display: inline-block;
-    width: 4rem;
+    width: 6rem;
     padding: 1rem;
     text-align: center;
     cursor: pointer;
@@ -52,7 +52,6 @@
     width: 6rem;
     height: 4rem;
     position: absolute;
-    top: -0.5rem;
     left: 0;
     border-radius: 50%;
     transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
@@ -60,19 +59,43 @@
   }
   .switch input#one:checked ~ .switch__indicator {
     background: PaleGreen;
-    transform: translate3d(7.5rem, 0, 0);
+    transform: translate3d(5.7em, 0, 0);
+    top: -0.3rem;
   }
   .switch input#two:checked ~ .switch__indicator {
     background: MediumTurquoise;
-    transform: translate3d(13.5rem, 0, 0);
+    transform: translate3d(13rem, 0, 0);
+    top: -0.3rem;
   }
   .switch input#three:checked ~ .switch__indicator {
     background: violet;
-    transform: translate3d(19.5rem, 0, 0);
+    transform: translate3d(21rem, 0, 0);
+    top: -0.3rem;
   }
   .switch input#four:checked ~ .switch__indicator {
     background: pink;
-    transform: translate3d(25.5rem, 0, 0);
+    transform: translate3d(29rem, 0, 0);
+    top: -0.3rem;
+  }
+  .switch input#five:checked ~ .switch__indicator {
+    background: greenyellow;
+    transform: translate3d(4.5rem, 0, 0);
+    top: 0.3rem;
+  }
+  .switch input#six:checked ~ .switch__indicator {
+    background: rebeccapurple;
+    transform: translate3d(12.8rem, 0, 0);
+    top: 0.3rem;
+  }
+  .switch input#seven:checked ~ .switch__indicator {
+    background: greenyellow;
+    transform: translate3d(21rem, 0, 0);
+    top: 0.3rem;
+  }
+  .switch input#eight:checked ~ .switch__indicator {
+    background: rebeccapurple;
+    transform: translate3d(29.2rem, 0, 0);
+    top: 0.3rem;
   }
   .switch input[type=radio]:not(:checked), .switch input[type=radio]:checked {
     display: none;
@@ -202,184 +225,56 @@
                <div id="cuerpo-central-curva-sup"></div>
                <div id="contenidos">
                   <div class="paso"></div>
-                  <h1>:: SUMA (1) ::</h1>   
+                  <h1>:: SUMA (2) ::</h1>   
                   <div style="text-align: center;">
                      <div class="switch">
                         <input name="switch" id="one" type="radio">
-                        <label for="one" class="switch__label" onclick="mostrar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); ocultar('opcion4');">opción 1</label>
+                        <label for="one" class="switch__label" onclick="mostrar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); ocultar('opcion4');ocultar('opcion5'); ocultar('opcion6'); ocultar('opcion7'); ocultar('opcion8');">Con 2 dígitos con reserva</label>
                         <input name="switch" id="two" type="radio" />
-                        <label for="two" class="switch__label" onclick="ocultar('opcion1'); mostrar('opcion2'); ocultar('opcion3'); ocultar('opcion4');">opción 2</label>
+                        <label for="two" class="switch__label" onclick="ocultar('opcion1'); mostrar('opcion2'); ocultar('opcion3'); ocultar('opcion4');ocultar('opcion5'); ocultar('opcion6'); ocultar('opcion7'); ocultar('opcion8');">Con 3 dígitos con reserva</label>
                         <input name="switch" id="three" type="radio" />
-                        <label for="three" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); mostrar('opcion3'); ocultar('opcion4');">opción 3</label>
+                        <label for="three" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); mostrar('opcion3'); ocultar('opcion4');ocultar('opcion5'); ocultar('opcion6'); ocultar('opcion7'); ocultar('opcion8');">Con 4 dígitos con reserva</label>
                         <input name="switch" id="four" type="radio" />
-                        <label for="four" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); mostrar('opcion4');">opción 3</label>
+                        <label for="four" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); mostrar('opcion4');ocultar('opcion5'); ocultar('opcion6'); ocultar('opcion7'); ocultar('opcion8');">Con 5 dígitos con reserva</label>
                         <div class="switch__indicator" /></div>
                       </div>
+                      <div class="switch">
+                         <input name="switch" id="five" type="radio">
+                         <label for="five" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); ocultar('opcion4');mostrar('opcion5'); ocultar('opcion6'); ocultar('opcion7'); ocultar('opcion8');">Con 2 dígitos sin reserva</label>
+                         <input name="switch" id="six" type="radio" />
+                         <label for="six" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); ocultar('opcion4');ocultar('opcion5'); mostrar('opcion6'); ocultar('opcion7'); ocultar('opcion8');">Con 3 dígitos sin reserva</label>
+                         <input name="switch" id="seven" type="radio" />
+                         <label for="seven" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); ocultar('opcion4');ocultar('opcion5'); ocultar('opcion6'); mostrar('opcion7'); ocultar('opcion8');">Con 4 dígitos sin reserva</label>
+                         <input name="switch" id="eight" type="radio" />
+                         <label for="eight" class="switch__label" onclick="ocultar('opcion1'); ocultar('opcion2'); ocultar('opcion3'); ocultar('opcion4');ocultar('opcion5'); ocultar('opcion6'); ocultar('opcion7'); mostrar('opcion8');">Con 5 dígitos sin reserva</label>
+                         <div class="switch__indicator" /></div>
+                       </div>
+
                   </div> 
                   <div  id="opcion1" style="display: none;">
-                        <h3>1Realice la operación suma siguiente.</h3>
-                        
-                        <table border="0" style="margin: auto;text-align:center;">
-                           <tr>
-                               <td colspan="2" style="padding: 10px;">  
-                                   <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
-                               </td>
-                           </tr>
-                           <tr>
-                              <td></td>
-                              <td>
-                                 <input type="text"  maxlength="1" class="casilla" id="numero11" readonly>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>
-                                 <input type="text" id="operacion" class="casilla" value="+" readonly>
-                              </td>
-                              <td>
-                                 <input type="text"  maxlength="1" class="casilla" id="numero12" readonly>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td colspan="2">
-                                 <hr color="black">
-                              </td>
-                           </tr>
-                           <tr>
-                              <td></td>
-                              <td>
-                                 <input type="text"  maxlength="2" class="aleatorio" id="resultado1">
-                              </td>
-                           </tr>
-                           <tr>
-                               <td colspan="2" style="padding: 10px;">
-                                   <input type="button" class="boton" value="Calcular" onclick="Sumar();">
-                               </td>
-                           </tr>
-                       </table>
-                    </div>
-                    <div  id="opcion2" style="display: none;">
-                          <h3>2Realice la operación suma siguiente.</h3>
-                          
-                          <table border="0" style="margin: auto;text-align:center;">
-                             <tr>
-                                 <td colspan="2" style="padding: 10px;">  
-                                     <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
-                                 </td>
-                             </tr>
-                             <tr>
-                                <td></td>
-                                <td>
-                                   <input type="text"  maxlength="1" class="casilla" id="numero11" readonly>
-                                </td>
-                             </tr>
-                             <tr>
-                                <td>
-                                   <input type="text" id="operacion" class="casilla" value="+" readonly>
-                                </td>
-                                <td>
-                                   <input type="text"  maxlength="1" class="casilla" id="numero12" readonly>
-                                </td>
-                             </tr>
-                             <tr>
-                                <td colspan="2">
-                                   <hr color="black">
-                                </td>
-                             </tr>
-                             <tr>
-                                <td></td>
-                                <td>
-                                   <input type="text"  maxlength="2" class="aleatorio" id="resultado1">
-                                </td>
-                             </tr>
-                             <tr>
-                                 <td colspan="2" style="padding: 10px;">
-                                     <input type="button" class="boton" value="Calcular" onclick="Sumar();">
-                                 </td>
-                             </tr>
-                         </table>
-                      </div>
-                      <div  id="opcion3" style="display: none;">
-                            <h3>3Realice la operación suma siguiente.</h3>
-                            
-                            <table border="0" style="margin: auto;text-align:center;">
-                               <tr>
-                                   <td colspan="2" style="padding: 10px;">  
-                                       <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
-                                   </td>
-                               </tr>
-                               <tr>
-                                  <td></td>
-                                  <td>
-                                     <input type="text"  maxlength="1" class="casilla" id="numero11" readonly>
-                                  </td>
-                               </tr>
-                               <tr>
-                                  <td>
-                                     <input type="text" id="operacion" class="casilla" value="+" readonly>
-                                  </td>
-                                  <td>
-                                     <input type="text"  maxlength="1" class="casilla" id="numero12" readonly>
-                                  </td>
-                               </tr>
-                               <tr>
-                                  <td colspan="2">
-                                     <hr color="black">
-                                  </td>
-                               </tr>
-                               <tr>
-                                  <td></td>
-                                  <td>
-                                     <input type="text"  maxlength="2" class="aleatorio" id="resultado1">
-                                  </td>
-                               </tr>
-                               <tr>
-                                   <td colspan="2" style="padding: 10px;">
-                                       <input type="button" class="boton" value="Calcular" onclick="Sumar();">
-                                   </td>
-                               </tr>
-                           </table>
-                        </div>
-                        <div  id="opcion4" style="display: none;">
-                              <h3>4Realice la operación suma siguiente.</h3>
-                              
-                              <table border="0" style="margin: auto;text-align:center;">
-                                 <tr>
-                                     <td colspan="2" style="padding: 10px;">  
-                                         <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
-                                     </td>
-                                 </tr>
-                                 <tr>
-                                    <td></td>
-                                    <td>
-                                       <input type="text"  maxlength="1" class="casilla" id="numero11" readonly>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td>
-                                       <input type="text" id="operacion" class="casilla" value="+" readonly>
-                                    </td>
-                                    <td>
-                                       <input type="text"  maxlength="1" class="casilla" id="numero12" readonly>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td colspan="2">
-                                       <hr color="black">
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td></td>
-                                    <td>
-                                       <input type="text"  maxlength="2" class="aleatorio" id="resultado1">
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                     <td colspan="2" style="padding: 10px;">
-                                         <input type="button" class="boton" value="Calcular" onclick="Sumar();">
-                                     </td>
-                                 </tr>
-                             </table>
-                          </div>
+                     <h3>Realice la operación suma con 2 digitos con reserva siguiente.</h3>
+                  </div>
+                  <div  id="opcion2" style="display: none;">
+                     <h3>Realice la operación suma con 3 digitos con reserva siguiente.</h3>
+                  </div>
+                  <div  id="opcion3" style="display: none;">
+                     <h3>Realice la operación suma con 4 digitos con reserva siguiente.</h3>
+                  </div>
+                  <div  id="opcion4" style="display: none;">
+                     <h3>Realice la operación suma con 5 digitos con reserva siguiente.</h3>
+                  </div>
+                  <div  id="opcion5" style="display: none;">
+                     <h3>Realice la operación suma con 2 digitos sin reserva siguiente.</h3>
+                  </div>
+                  <div  id="opcion6" style="display: none;">
+                     <h3>Realice la operación suma con 3 digitos sin reserva siguiente.</h3>
+                  </div>
+                  <div  id="opcion7" style="display: none;">
+                     <h3>Realice la operación suma con 4 digitos sin reserva siguiente.</h3>
+                  </div>
+                  <div  id="opcion8" style="display: none;">
+                     <h3>Realice la operación suma con 5 digitos sin reserva siguiente.</h3>
+                  </div>
                  <div>
                   <div>
                     <h2 class="all-tittles">Rendimiento</h2>
