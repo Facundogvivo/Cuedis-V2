@@ -515,6 +515,15 @@ a:active {
     font-size: 40px;
     text-decoration: none;
 }
+
+.reserva {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    border-radius: 5px;
+   background-color: white;
+   }
+
 .casilla {
     width: 50px;
     height: 50px;

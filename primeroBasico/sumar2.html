@@ -225,7 +225,8 @@
                <div id="cuerpo-central-curva-sup"></div>
                <div id="contenidos">
                   <div class="paso"></div>
-                  <h1>:: SUMA (2) ::</h1>   
+                  <h1>:: SUMA (2) ::</h1> 
+                     <hr>  
                   <div style="text-align: center;">
                      <div class="switch">
                         <input name="switch" id="one" type="radio">
@@ -251,29 +252,360 @@
                        </div>
 
                   </div> 
+                  <hr>
                   <div  id="opcion1" style="display: none;">
                      <h3>Realice la operación suma con 2 digitos con reserva siguiente.</h3>
+                     <table border="0" style="margin: auto;text-align:center;">
+                        <tr>
+                           <td colspan="4" style="padding: 10px;">  
+                               <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                           </td>
+                       </tr>
+                        <tr>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva1></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva2></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero11 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero21 readonly></td>
+                        </tr>
+                        <tr>
+                        <td><INPUT type="text" id="operacion" class="casilla" value="+" readonly></td>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero12 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero22 readonly></td>
+                        </tr>
+                        <tr>
+                        <td colspan="4"><hr color="black"></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado1"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado2"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="padding: 10px;">
+                                <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                            </td>
+                        </tr>
+                        </table>
                   </div>
                   <div  id="opcion2" style="display: none;">
                      <h3>Realice la operación suma con 3 digitos con reserva siguiente.</h3>
+                     <table border="0" style="margin: auto;text-align:center;">
+                        <tr>
+                           <td colspan="5" style="padding: 10px;">  
+                               <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                           </td>
+                       </tr>
+                        <tr>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva1></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva2></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva3></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero11 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero21 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero31 readonly></td>
+                        </tr>
+                        <tr>
+                        <td><INPUT type="text" id="operacion" class="casilla" value="+" readonly></td>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero12 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero22 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero32 readonly></td>
+                        </tr>
+                        <tr>
+                        <td colspan="5"><hr color="black"></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado1"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado2"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado3"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="padding: 10px;">
+                                <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                            </td>
+                        </tr>
+                        </table>
                   </div>
                   <div  id="opcion3" style="display: none;">
                      <h3>Realice la operación suma con 4 digitos con reserva siguiente.</h3>
+                     <table border="0" style="margin: auto;text-align:center;">
+                        <tr>
+                           <td colspan="6" style="padding: 10px;">  
+                               <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                           </td>
+                       </tr>
+                        <tr>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva1></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva2></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva3></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva4></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero11 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero21 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero31 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero41 readonly></td>
+                        </tr>
+                        <tr>
+                        <td><INPUT type="text" id="operacion" class="casilla" value="+" readonly></td>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero12 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero22 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero32 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero42 readonly></td>
+                        </tr>
+                        <tr>
+                        <td colspan="6"><hr color="black"></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado1"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado2"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado3"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado4"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado5"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" style="padding: 10px;">
+                                <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                            </td>
+                        </tr>
+                        </table>
                   </div>
                   <div  id="opcion4" style="display: none;">
                      <h3>Realice la operación suma con 5 digitos con reserva siguiente.</h3>
+                     <table border="0" style="margin: auto;text-align:center;">
+                        <tr>
+                           <td colspan="7" style="padding: 10px;">  
+                               <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                           </td>
+                       </tr>
+                        <tr>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva1></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva2></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva3></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva4></td>
+                        <td><INPUT type="text"  maxlength="1" class="reserva" name=reserva5></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero11 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero21 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero31 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero41 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero51 readonly></td>
+                        </tr>
+                        <tr>
+                        <td><INPUT type="text" id="operacion" class="casilla" value="+" readonly></td>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero12 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero22 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero32 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero42 readonly></td>
+                        <td><INPUT type="text"  maxlength="1" class="casilla" name=numero52 readonly></td>
+                        </tr>
+                        <tr>
+                        <td colspan="7"><hr color="black"></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado1"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado2"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado3"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado4"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado5"></td>
+                        <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado6"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" style="padding: 10px;">
+                                <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                            </td>
+                        </tr>
+                        </table>
                   </div>
                   <div  id="opcion5" style="display: none;">
                      <h3>Realice la operación suma con 2 digitos sin reserva siguiente.</h3>
+                     <table border="0" style="margin: auto;text-align:center;">
+                        <tr>
+                           <td colspan="4" style="padding: 10px;">  
+                               <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                           </td>
+                       </tr>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero11 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero21 readonly></td>
+                        </tr>
+                        <tr>
+                           <td><INPUT type="text" id="operacion" class="casilla" value="+" readonly></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero12 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero22 readonly></td>
+                        </tr>
+                        <tr>
+                           <td colspan="4"><hr color="black"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado1"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado2"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="padding: 10px;">
+                                <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                            </td>
+                        </tr>
+                     </table>
                   </div>
                   <div  id="opcion6" style="display: none;">
                      <h3>Realice la operación suma con 3 digitos sin reserva siguiente.</h3>
+                     <table border="0" style="margin: auto;text-align:center;">
+                        <tr>
+                           <td colspan="5" style="padding: 10px;">  
+                               <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                           </td>
+                       </tr>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero11 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero21 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero31 readonly></td>
+                        </tr>
+                        <tr>
+                           <td><INPUT type="text" id="operacion" class="casilla" value="+" readonly></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero12 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero22 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero32 readonly></td>
+                        </tr>
+                        <tr>
+                           <td colspan="5"><hr color="black"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado1"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado2"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="padding: 10px;">
+                                <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                            </td>
+                        </tr>
+                     </table>
                   </div>
                   <div  id="opcion7" style="display: none;">
                      <h3>Realice la operación suma con 4 digitos sin reserva siguiente.</h3>
+                     <table border="0" style="margin: auto;text-align:center;">
+                        <tr>
+                           <td colspan="6" style="padding: 10px;">  
+                               <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                           </td>
+                       </tr>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero11 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero21 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero31 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero41 readonly></td>
+                        </tr>
+                        <tr>
+                           <td><INPUT type="text" id="operacion" class="casilla" value="+" readonly></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero12 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero22 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero32 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero42 readonly></td>
+                        </tr>
+                        <tr>
+                           <td colspan="6"><hr color="black"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado1"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado2"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado3"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" style="padding: 10px;">
+                                <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                            </td>
+                        </tr>
+                     </table>
                   </div>
                   <div  id="opcion8" style="display: none;">
                      <h3>Realice la operación suma con 5 digitos sin reserva siguiente.</h3>
+                     <table border="0" style="margin: auto;text-align:center;">
+                        <tr>
+                           <td colspan="7" style="padding: 10px;">  
+                               <input type="button" class="boton" onclick="Nuevo();" value="Nuevo"> 
+                           </td>
+                       </tr>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero11 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero21 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero31 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero41 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero51 readonly></td>
+                        </tr>
+                        <tr>
+                           <td><INPUT type="text" id="operacion" class="casilla" value="+" readonly></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero12 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero22 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero32 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero42 readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" name=numero52 readonly></td>
+                        </tr>
+                        <tr>
+                           <td colspan="7"><hr color="black"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado1"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado2"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado3"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado4"></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" name="resultado5"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" style="padding: 10px;">
+                                <input type="button" class="boton" value="Calcular" onclick="Sumar();">
+                            </td>
+                        </tr>
+                     </table>
                   </div>
                  <div>
                   <div>
