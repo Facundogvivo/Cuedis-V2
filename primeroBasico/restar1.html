@@ -21,10 +21,60 @@
             font-weight: bold;
     color: #ff8800;
          }
+.switch {
+    position: relative;
+    width: 100%;
+    padding: 0 1rem;
+    font-family: verdana;
+    text-align: center;
+  }
+  .switch:before {
+    content: "  ";
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+  }
+  .switch__label {
+    display: inline-block;
+    width: 4rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: color 200ms ease-out;
+  }
+  .switch__label:hover {
+    color: #000;
+  }
+  .switch__indicator {
+    width: 6rem;
+    height: 4rem;
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    border-radius: 50%;
+    transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
+    transform: translate3d(1rem, 0, 0);
+  }
+  .switch input#one:checked ~ .switch__indicator {
+    background: PaleGreen;
+    transform: translate3d(13.5rem, 0, 0);
+  }
+  .switch input#two:checked ~ .switch__indicator {
+    background: MediumTurquoise;
+    transform: translate3d(19.5rem, 0, 0);
+  }
+  .switch input[type=radio]:not(:checked), .switch input[type=radio]:checked {
+    display: none;
+  }
          </style>
       <script>
+         
+            //----- OPCION 1 -----//
          function Nuevo() { 
-                document.getElementById("numero11").value = aleatorio(1,10);
+                document.getElementById("numero11").value = aleatorio(2,9)
                 document.getElementById("numero12").value = aleatorio(1,document.getElementById("numero11").value);
                 document.getElementById("resultado1").value = "";
             }
@@ -79,6 +129,74 @@
                 };      
                 contador++;
                 Nuevo();
+                document.getElementById("ejtotales").innerHTML = contador;
+                
+                var rendimiento = (parseInt(document.getElementById("ejCorrecto").innerHTML)/parseInt(document.getElementById("ejtotales").innerHTML))*100;
+                document.getElementById("ejRendimiento").innerHTML =  rendimiento.toFixed() + " %";
+            }
+            
+
+            //----- OPCION 2 -----//
+
+            function Nuevo2() { 
+                document.getElementById("numero21").value = aleatorio(2,9);
+                document.getElementById("numero22").value = aleatorio(1,document.getElementById("numero21").value-1);
+                document.getElementById("resultado2").value = "";
+            }
+            var contador=0;
+            var correctos = 0;
+            var incorrectos = 0;
+         function Restar2() {
+            
+                var numero1;
+                var numero2;
+                var resta;
+                var resultado;
+                numero1 =   parseInt(document.getElementById("numero21").value);
+                numero2 =   parseInt(document.getElementById("numero22").value);
+                resta = parseInt(document.getElementById("resultado2").value)
+               
+               
+                if(numero1 - numero2 == resta) {
+                    resultado = "Correcto";
+                    var tr, td, tabla;
+                    tabla = document.getElementById('dataTable');
+                    tr = tabla.insertRow(tabla.rows.length);
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = numero1 ;
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML =  numero2 ;
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = resta ;  
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = resultado ; 
+                    correcto(); 
+                    correctos = correctos + 1;
+                    document.getElementById('ejCorrecto').innerHTML = correctos; 
+                    incorrectos = incorrectos;
+                    document.getElementById('ejIncorrecto').innerHTML = incorrectos; 
+                } else {
+                resultado = "Incorrecto";
+                var tr, td, tabla;
+                    var tr, td, tabla;
+                    tabla = document.getElementById('dataTable');
+                    tr = tabla.insertRow(tabla.rows.length);
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = numero1 ;
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML =  numero2 ;
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = resta ;  
+                    td = tr.insertCell(tr.cells.length);
+                    td.innerHTML = resultado ;
+                    incorrecto();  
+                    incorrectos = incorrectos + 1;
+                    document.getElementById('ejIncorrecto').innerHTML = incorrectos;
+                    correctos = correctos
+                    document.getElementById('ejCorrecto').innerHTML = correctos;
+                };        
+                contador++;
+                Nuevo2();
                 document.getElementById("ejtotales").innerHTML = contador;
                 
                 var rendimiento = (parseInt(document.getElementById("ejCorrecto").innerHTML)/parseInt(document.getElementById("ejtotales").innerHTML))*100;
@@ -146,10 +264,21 @@
                <div id="cuerpo-central-curva-sup"></div>
                <div id="contenidos">
                   <div class="paso"></div>
-                  <h1>:: Resta (1) ::</h1> 
+                  <h1>:: RESTA (1) ::</h1> 
+                  <div style="text-align: center;">
+                    <hr>
+                     <div class="switch">
+                        <input name="switch" id="one" type="radio">
+                        <label for="one" class="switch__label" onclick="mostrar('opcion1'); ocultar('opcion2');">opción 1</label>
+                        <input name="switch" id="two" type="radio" />
+                        <label for="two" class="switch__label" onclick="ocultar('opcion1'); mostrar('opcion2');">opción 2</label>
+                        <div class="switch__indicator" /></div>
+                      </div>
+                  </div>
                   <hr>
+                    <div id="opcion1" style="display: none;">
                   <div>
-                        <h3>Realice la operación resta siguiente.</h3>
+                        <h3>Realice la operación resta sin reserva siguiente.</h3>
                         
                         <table border="0" style="margin: auto;text-align:center;">
                            <tr>
@@ -188,6 +317,41 @@
                                </td>
                            </tr>
                        </table>
+                    </div>
+                    </div>
+                    <div id="opcion2" style="display: none;">
+                  <div>
+                        <h3>Realice la operación suma con reserva siguiente.</h3>
+                        
+
+                        <table border="0" style="margin: auto;text-align:center;">
+                           <tr>
+                               <td colspan="3" style="padding: 10px;">  
+                                   <input type="button" class="boton" onclick="Nuevo2();" value="Nuevo"> 
+                               </td>
+                           </tr>
+                           <tr>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" id="numero21" readonly></td>
+                           </tr>
+                           <tr>
+                           <td><INPUT type="text" id="operacion" class="casilla" value="-" readonly></td>
+                           <td><INPUT type="text"  maxlength="1" class="casilla" id="numero22" readonly></td>
+                           </tr>
+                           <tr>
+                           <td colspan="3"><hr color="black"></td>
+                           </tr>
+                           <tr>
+                           <td></td>
+                           <td><INPUT type="text"  maxlength="1" class="aleatorio" id="resultado2"></td>
+                           </tr>
+                           <tr>
+                               <td colspan="3" style="padding: 10px;">
+                                   <input type="button" class="boton" value="Calcular" onclick="Restar2();">
+                               </td>
+                           </tr>
+                           </table>
+                    </div>
                     </div>
                  <div>
                   <div>
