@@ -19,150 +19,148 @@
          }
          .subapartado-h {
             font-weight: bold;
-    color: #ff8800;
+            color: #ff8800;
          }
-.switch {
-    position: relative;
-    width: 100%;
-    padding: 0 1rem;
-    font-family: verdana;
-    text-align: center;
-  }
-  .switch:before {
-    content: "  ";
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 3rem;
-    border-radius: 10px;
-  }
-  .switch__label {
-    display: inline-block;
-    width: 6rem;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: color 200ms ease-out;
-  }
-  .switch__label:hover {
-    color: #000;
-  }
-  .switch__indicator {
-    width: 6rem;
-    height: 4rem;
-    position: absolute;
-    left: 0;
-    border-radius: 50%;
-    transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
-    transform: translate3d(1rem, 0, 0);
-  }
-  .switch input#one:checked ~ .switch__indicator {
-    background: PaleGreen;
-    transform: translate3d(5.7em, 0, 0);
-    top: -0.3rem;
-  }
-  .switch input#two:checked ~ .switch__indicator {
-    background: MediumTurquoise;
-    transform: translate3d(13rem, 0, 0);
-    top: -0.3rem;
-  }
-  .switch input#three:checked ~ .switch__indicator {
-    background: violet;
-    transform: translate3d(21rem, 0, 0);
-    top: -0.3rem;
-  }
-  .switch input#four:checked ~ .switch__indicator {
-    background: pink;
-    transform: translate3d(29rem, 0, 0);
-    top: -0.3rem;
-  }
-  .switch input#five:checked ~ .switch__indicator {
-    background: greenyellow;
-    transform: translate3d(4.5rem, 0, 0);
-    top: 0.3rem;
-  }
-  .switch input#six:checked ~ .switch__indicator {
-    background: rebeccapurple;
-    transform: translate3d(12.8rem, 0, 0);
-    top: 0.3rem;
-  }
-  .switch input#seven:checked ~ .switch__indicator {
-    background: greenyellow;
-    transform: translate3d(21rem, 0, 0);
-    top: 0.3rem;
-  }
-  .switch input#eight:checked ~ .switch__indicator {
-    background: rebeccapurple;
-    transform: translate3d(29.2rem, 0, 0);
-    top: 0.3rem;
-  }
-  .switch input[type=radio]:not(:checked), .switch input[type=radio]:checked {
-    display: none;
-  }
-         </style>
+         .switch {
+            position: relative;
+            width: 100%;
+            padding: 0 1rem;
+            font-family: verdana;
+            text-align: center;
+         }
+         .switch:before {
+            content: "  ";
+            position: absolute;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 3rem;
+            border-radius: 10px;
+         }
+         .switch__label {
+            display: inline-block;
+            width: 6rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: color 200ms ease-out;
+         }
+         .switch__label:hover {
+            color: #000;
+         }
+         .switch__indicator {
+            width: 6rem;
+            height: 4rem;
+            position: absolute;
+            left: 0;
+            border-radius: 50%;
+            transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
+            transform: translate3d(1rem, 0, 0);
+         }
+         .switch input#one:checked ~ .switch__indicator {
+            background: PaleGreen;
+            transform: translate3d(5.7em, 0, 0);
+            top: -0.3rem;
+         }
+         .switch input#two:checked ~ .switch__indicator {
+            background: MediumTurquoise;
+            transform: translate3d(13rem, 0, 0);
+            top: -0.3rem;
+         }
+         .switch input#three:checked ~ .switch__indicator {
+            background: violet;
+            transform: translate3d(21rem, 0, 0);
+            top: -0.3rem;
+         }
+         .switch input#four:checked ~ .switch__indicator {
+            background: pink;
+            transform: translate3d(29rem, 0, 0);
+            top: -0.3rem;
+         }
+         .switch input#five:checked ~ .switch__indicator {
+            background: greenyellow;
+            transform: translate3d(4.5rem, 0, 0);
+            top: 0.3rem;
+         }
+         .switch input#six:checked ~ .switch__indicator {
+            background: rebeccapurple;
+            transform: translate3d(12.8rem, 0, 0);
+            top: 0.3rem;
+         }
+         .switch input#seven:checked ~ .switch__indicator {
+            background: greenyellow;
+            transform: translate3d(21rem, 0, 0);
+            top: 0.3rem;
+         }
+         .switch input#eight:checked ~ .switch__indicator {
+            background: rebeccapurple;
+            transform: translate3d(29.2rem, 0, 0);
+            top: 0.3rem;
+         }
+         .switch input[type=radio]:not(:checked), .switch input[type=radio]:checked {
+            display: none;
+         }
+      </style>
       <script>
-         function Nuevo() { 
-                document.getElementById("numero11").value = aleatorio(1,9);
-                document.getElementById("numero12").value = aleatorio(1,10-document.getElementById("numero11").value);
-                document.getElementById("resultado1").value = "";
-            }
             var contador=0;
             var correctos = 0;
             var incorrectos = 0;
+            var numero1;
+            var numero2;
+            var suma;
+            var resultado;
+            var tr, td, tabla;
+            var rendimiento;
+         function Nuevo() { 
+            document.getElementById("numero11").value = aleatorio(1,9);
+            document.getElementById("numero12").value = aleatorio(1,10-document.getElementById("numero11").value);
+            document.getElementById("resultado1").value = "";
+         }
          function Sumar() {
-                var numero1;
-                var numero2;
-                var suma;
-                var resultado;
-                numero1 =   parseInt(document.getElementById("numero11").value);
-                numero2 =   parseInt(document.getElementById("numero12").value);
-                suma =   parseInt(document.getElementById("resultado1").value);
-                if(numero1 + numero2 == suma) {
-                    resultado = "Correcto";
-                    var tr, td, tabla;
-                    tabla = document.getElementById('dataTable');
-                    tr = tabla.insertRow(tabla.rows.length);
-                    td = tr.insertCell(tr.cells.length);
-                    td.innerHTML = numero1 ;
-                    td = tr.insertCell(tr.cells.length);
-                    td.innerHTML =  numero2 ;
-                    td = tr.insertCell(tr.cells.length);
-                    td.innerHTML = suma ;  
-                    td = tr.insertCell(tr.cells.length);
-                    td.innerHTML = resultado ; 
-                    correcto(); 
-                    correctos = correctos + 1;
-                    document.getElementById('ejCorrecto').innerHTML = correctos; 
-                    incorrectos = incorrectos;
-                    document.getElementById('ejIncorrecto').innerHTML = incorrectos; 
-                } else {
-                resultado = "Incorrecto";
-                var tr, td, tabla;
-                    var tr, td, tabla;
-                    tabla = document.getElementById('dataTable');
-                    tr = tabla.insertRow(tabla.rows.length);
-                    td = tr.insertCell(tr.cells.length);
-                    td.innerHTML = numero1 ;
-                    td = tr.insertCell(tr.cells.length);
-                    td.innerHTML =  numero2 ;
-                    td = tr.insertCell(tr.cells.length);
-                    td.innerHTML = suma ;  
-                    td = tr.insertCell(tr.cells.length);
-                    td.innerHTML = resultado ;
-                    incorrecto();  
-                    incorrectos = incorrectos + 1;
-                    document.getElementById('ejIncorrecto').innerHTML = incorrectos;
-                    correctos = correctos
-                    document.getElementById('ejCorrecto').innerHTML = correctos;
-                };      
-                contador++;
-                Nuevo();
-                document.getElementById("ejtotales").innerHTML = contador;
-                
-                var rendimiento = (parseInt(document.getElementById("ejCorrecto").innerHTML)/parseInt(document.getElementById("ejtotales").innerHTML))*100;
-                document.getElementById("ejRendimiento").innerHTML =  rendimiento.toFixed() + " %";
-            }
+            numero1 =   parseInt(document.getElementById("numero11").value);
+            numero2 =   parseInt(document.getElementById("numero12").value);
+            suma =   parseInt(document.getElementById("resultado1").value);
+            if(numero1 + numero2 == suma) {
+               resultado = "Correcto";
+               tabla = document.getElementById('dataTable');
+               tr = tabla.insertRow(tabla.rows.length);
+               td = tr.insertCell(tr.cells.length);
+               td.innerHTML = numero1 ;
+               td = tr.insertCell(tr.cells.length);
+               td.innerHTML =  numero2 ;
+               td = tr.insertCell(tr.cells.length);
+               td.innerHTML = suma ;  
+               td = tr.insertCell(tr.cells.length);
+               td.innerHTML = resultado ; 
+               correcto(); 
+               correctos = correctos + 1;
+               document.getElementById('ejCorrecto').innerHTML = correctos; 
+               incorrectos = incorrectos;
+               document.getElementById('ejIncorrecto').innerHTML = incorrectos; 
+            } else {
+               resultado = "Incorrecto";
+               tabla = document.getElementById('dataTable');
+               tr = tabla.insertRow(tabla.rows.length);
+               td = tr.insertCell(tr.cells.length);
+               td.innerHTML = numero1 ;
+               td = tr.insertCell(tr.cells.length);
+               td.innerHTML =  numero2 ;
+               td = tr.insertCell(tr.cells.length);
+               td.innerHTML = suma ;  
+               td = tr.insertCell(tr.cells.length);
+               td.innerHTML = resultado ;
+               incorrecto();  
+               incorrectos = incorrectos + 1;
+               document.getElementById('ejIncorrecto').innerHTML = incorrectos;
+               correctos = correctos
+               document.getElementById('ejCorrecto').innerHTML = correctos;
+            };      
+            contador++;
+            Nuevo();
+            document.getElementById("ejtotales").innerHTML = contador;
+            rendimiento = (parseInt(document.getElementById("ejCorrecto").innerHTML)/parseInt(document.getElementById("ejtotales").innerHTML))*100;
+            document.getElementById("ejRendimiento").innerHTML =  rendimiento.toFixed() + " %";
+         }
       </script>
    </head>
    <body>
@@ -172,55 +170,97 @@
      <div clas="estadoIncorrecto" id="estadoIncorrecto">
          <img src="../assets/img/img/Intentalo.gif" width="100%" style="border-radius: 10px;">
      </div>
-
       <div id="contenido">
          <div id="contenido-curva-superior"></div>
          <div id="banners">
-            <div id="banner1"><a href="../index.html"><img src="../assets/img/img/cuedis.png" alt="Cuaderno de ejercicios digitales"></a></div>
+            <div id="banner1">
+               <a href="../index.html">
+                  <img src="../assets/img/img/cuedis.png" alt="Cuaderno de ejercicios digitales">
+               </a>
+            </div>
             <div id="banner2"><!-- espacio para futura publicidad --></div>
          </div>
          <div id="lenguetas">
             <div id="temas-arriba">
-               <div id="tema10"><a href="../sextoBasico.html">6° Básico</a></div>
-               <div id="tema09"><a href="#"></a></div>
-               <div id="tema08"><a href="#"></a></div>
-               <div id="tema07"><a href="#"></a></div>
-               <div id="tema06"><a href="#"></a></div>
+               <div id="tema10">
+                  <a href="../sextoBasico.html">6° Básico</a>
+               </div>
+               <div id="tema09">
+                  <a href="#"></a>
+               </div>
+               <div id="tema08">
+                  <a href="#"></a>
+               </div>
+               <div id="tema07">
+                  <a href="#"></a>
+               </div>
+               <div id="tema06">
+                  <a href="#"></a>
+               </div>
             </div>
             <div id="temas-abajo">
-               <div id="tema01"><a href="../primeroBasico.html">1° Básico</a></div>
-               <div id="tema02"><a href="../segundoBasico.html">2° Básico</a></div>
-               <div id="tema03"><a href="../terceroBasico.html">3° Básico</a></div>
-               <div id="tema04"><a href="../cuartoBasico.html">4° Básico</a></div>
-               <div id="tema05"><a href="../quintoBasico.html">5° Básico</a></div>
+               <div id="tema01">
+                  <a href="../primeroBasico.html">1° Básico</a>
+               </div>
+               <div id="tema02">
+                  <a href="../segundoBasico.html">2° Básico</a>
+               </div>
+               <div id="tema03">
+                  <a href="../terceroBasico.html">3° Básico</a>
+               </div>
+               <div id="tema04">
+                  <a href="../cuartoBasico.html">4° Básico</a>
+               </div>
+               <div id="tema05">
+                  <a href="../quintoBasico.html">5° Básico</a>
+               </div>
             </div>
-         </div>
-         <div id="navegador">
-            <!-- espacio para poner algo en el futuro -->
          </div>
          <div id="cuerpo">
             <div id="cuerpo-izq">
                <div class="caja">
                   <h1>Unidades</h1>
-                  <div><a class="subapartado-a" href="losNumerosHastaEl10.html" title="Clic!">Los números hasta el 10</a></div>
-                  <div><a class="subapartado-b" href="componerDescomponerNumeros.html" title="Clic!">Componer y descomponer números</a></div>
-                  <div><a class="subapartado-c" href="numerosOrdinales.html" title="Clic!">Números ordinales</a></div>
-                  <div><a class="subapartado-d" href="sumar1.html" title="Clic!">Sumar (1)</a></div>
-                  <div><a class="subapartado-e" href="restar1.html" title="Clic!">Restar (1)</a></div>
-                  <div><a class="subapartado-f" href="figuras2D3D.html" title="Clic!">Figuras 2D y 3D</a></div>
-                  <div><a class="subapartado-g" href="numerosMayoresA10.html" title="Clic!">Números mayores a 10</a></div>
-                  <div><a class="subapartado-h" href="sumar2.html" title="Clic!">Sumar (2)</a></div>
-                  <div><a class="subapartado-i" href="restar2.html" title="Clic!">Restar (2)</a></div>
-                  <div><a class="subapartado-j" href="patrones.html" title="Clic!">Patrones</a></div>
-                  <div><a class="subapartado-k" href="contarHasta100.html" title="Clic!">Contar hasta 100</a></div>
-                  <div><a class="subapartado-l" href="longitud.html" title="Clic!">Longitud</a></div>
-                  <div><a class="subapartado-m" href="figuras2d2.html" title="Clic!">Figuras 2D (2)</a></div>
-               </div>
-               <div class="caja-google">
-                  <!--  espacio listo para futura publicidad de Google -->
+                  <div>
+                     <a class="subapartado-a" href="losNumerosHastaEl10.html" title="Clic!">Los números hasta el 10</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-b" href="componerDescomponerNumeros.html" title="Clic!">Componer y descomponer números</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-c" href="numerosOrdinales.html" title="Clic!">Números ordinales</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-d" href="sumar1.html" title="Clic!">Sumar (1)</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-e" href="restar1.html" title="Clic!">Restar (1)</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-f" href="figuras2D3D.html" title="Clic!">Figuras 2D y 3D</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-g" href="numerosMayoresA10.html" title="Clic!">Números mayores a 10</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-h" href="sumar2.html" title="Clic!">Sumar (2)</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-i" href="restar2.html" title="Clic!">Restar (2)</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-j" href="patrones.html" title="Clic!">Patrones</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-k" href="contarHasta100.html" title="Clic!">Contar hasta 100</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-l" href="longitud.html" title="Clic!">Longitud</a>
+                  </div>
+                  <div>
+                     <a class="subapartado-m" href="figuras2d2.html" title="Clic!">Figuras 2D (2)</a>
+                  </div>
                </div>
             </div>
-
             <div id="cuerpo-cent">
                <div id="cuerpo-central-curva-sup"></div>
                <div id="contenidos">
@@ -608,9 +648,7 @@
                      </table>
                   </div>
                  <div>
-                  <div>
                     <h2 class="all-tittles">Rendimiento</h2>
-                  </div>
                      <div>
                         <div>
                            <h3>En este cuadro se puede ver el rendimiento obtenido.</h3>
